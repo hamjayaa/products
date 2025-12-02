@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natura Squa - The Miracle of Deep Sea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f0500', // Very dark brownish black
+                            card: '#1c1917', // Stone 900
+                            accent: '#f59e0b', // Amber 500 (GOLD)
+                            glow: '#fbbf24',   // Amber 400
+                            text: '#d6d3d1'  // Stone 300
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shine': 'shine 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shine: {
+                            '0%': { left: '-100%' },
+                            '50%': { left: '100%' },
+                            '100%': { left: '100%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(28, 25, 23, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.1);
+        }
+
+        .glass-panel-strong {
+            background: rgba(41, 37, 36, 0.8);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a8a29e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fde68a 0%, #d97706 80%, #92400e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4 glass-panel border-b-0">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <div class="flex items-center gap-3">
+                <!-- Placeholder Logo Icon -->
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-yellow-400 to-orange-600 flex items-center justify-center text-black font-bold shadow-[0_0_15px_rgba(245,158,11,0.5)]">M</div>
+                <span class="text-xl font-bold tracking-tight text-white">MUMTAS</span>
+            </div>
+
+            <div class="hidden md:flex gap-8 text-sm text-gray-400 font-medium">
+                <a href="#origin" class="hover:text-brand-accent transition-colors">Sumber Alami</a>
+                <a href="#oxygen" class="hover:text-brand-accent transition-colors">Kekuatan Oksigen</a>
+                <a href="#benefits" class="hover:text-brand-accent transition-colors">Manfaat</a>
+                <a href="#pricing" class="hover:text-brand-accent transition-colors">Harga</a>
+            </div>
+            <a href="#pricing" class="px-5 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold text-sm hover:brightness-110 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+                Pesan Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-900 via-black to-black z-0"></div>
+        <div class="absolute top-0 left-0 w-full h-full grid-bg opacity-20 z-0"></div>
+        
+        <!-- Glow Effects (GOLD) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/10 blur-[120px] rounded-full animate-pulse-slow"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto space-y-8 mt-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 text-xs font-bold tracking-[0.2em] uppercase mb-4 animate-[fadeIn_1s_ease-out]">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                99% Pure Squalene
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                <span class="text-gradient">The Secret of</span><br>
+                <span class="text-gradient-gold drop-shadow-2xl">Deep Sea Oxygen.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Ekstrak murni minyak hati hiu laut dalam (<span class="text-brand-accent">Centrophorus atromarginatus</span>). <br class="hidden md:block">
+                Sumber oksigen alami untuk vitalitas jantung, kulit, dan stamina Anda.
+            </p>
+
+            <!-- 3D BOTTLE (GOLD VERSION) -->
+            <div class="pt-12 animate-float">
+                <div class="relative w-56 h-80 md:w-64 md:h-[400px] mx-auto perspective-1000">
+                    <!-- Bottle Body Container (Dark Amber Glass Look) -->
+                    <div class="relative w-full h-full bg-gradient-to-br from-stone-800 to-black rounded-[40px] border border-stone-700/50 shadow-[0_0_60px_-15px_rgba(245,158,11,0.2)] flex flex-col items-center overflow-hidden backdrop-blur-sm group cursor-pointer transition-all duration-500 hover:shadow-[0_0_100px_-20px_rgba(245,158,11,0.4)]">
+                        
+                        <!-- Cap (Gold) -->
+                        <div class="w-full h-16 bg-gradient-to-r from-yellow-700 to-yellow-900 border-b border-yellow-600/30 flex items-center justify-center">
+                             <div class="w-1/2 h-1 bg-yellow-500/30 rounded-full"></div>
+                        </div>
+
+                        <!-- Label Content -->
+                        <div class="flex-1 flex flex-col items-center justify-center p-6 text-center z-10 w-full relative">
+                            <!-- Border pattern on label -->
+                            <div class="absolute inset-4 border border-brand-accent/30 rounded-[24px]"></div>
+                            
+                            <!-- Icon Droplet -->
+                            <div class="relative mb-4">
+                                <i class="fa-solid fa-droplet text-brand-accent text-5xl opacity-100 drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]"></i>
+                                <!-- Sparkle -->
+                                <i class="fa-solid fa-star text-white text-xs absolute -top-1 -right-2 animate-pulse"></i>
+                            </div>
+                            
+                            <h3 class="text-3xl font-bold text-white leading-none mb-1">SHARK<br>SQUA</h3>
+                            <p class="text-brand-accent font-medium tracking-widest text-sm uppercase mb-4">Squalene Oil</p>
+                            
+                            <div class="w-full h-px bg-gradient-to-r from-transparent via-yellow-600 to-transparent my-4"></div>
+                            
+                            <div class="flex justify-center gap-4 text-xs text-yellow-500/80 font-mono">
+                                <div>1000mg</div>
+                                <div>•</div>
+                                <div>Softgel</div>
+                            </div>
+                        </div>
+
+                        <!-- Golden Reflection/Shine -->
+                        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-yellow-500/10 to-transparent pointer-events-none"></div>
+                        <div class="absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-[shine_1.5s_ease-in-out_infinite]" style="left: -100%;"></div>
+                        
+                        <!-- Liquid Effect at bottom -->
+                        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-orange-500/20 to-transparent opacity-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORIGIN SECTION -->
+    <section id="origin" class="py-32 px-6 bg-[#0c0a09] relative border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="md:w-1/3 sticky top-32">
+                    <h2 class="text-4xl font-bold text-white mb-4 leading-tight">Hidup di<br><span class="text-brand-accent">Kedalaman 1000m.</span></h2>
+                    <div class="w-20 h-1 bg-brand-accent rounded-full mb-6"></div>
+                    <p class="text-gray-400 text-sm">Bagaimana hiu Aizame bertahan hidup di lingkungan ekstrem yang minim cahaya dan oksigen?</p>
+                </div>
+                
+                <div class="md:w-2/3 space-y-12">
+                    <!-- Fact 1 -->
+                    <div class="reveal glass-panel p-8 rounded-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-20 bg-yellow-500/10 blur-[50px] rounded-full"></div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                            <i class="fa-solid fa-fish-fins text-brand-accent"></i>
+                            Hati Raksasa (The Giant Liver)
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Spesies hiu <em>Centrophorus atromarginatus</em> memiliki ukuran hati yang luar biasa besar, mencapai <strong>40% dari berat tubuhnya</strong>. Hati inilah pabrik energi mereka.
+                        </p>
+                    </div>
+
+                    <!-- Fact 2 -->
+                    <div class="reveal glass-panel p-8 rounded-2xl relative overflow-hidden">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                            <i class="fa-solid fa-atom text-brand-accent"></i>
+                            Keajaiban Squalene
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Hati mereka penuh dengan minyak Squalene. Zat inilah yang memungkinkan mereka mengambil oksigen dari air secara efisien dan menyuplainya ke seluruh tubuh, memberi mereka stamina tak terbatas meski di tekanan tinggi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCIENCE SECTION: OXYGENATION -->
+    <section id="oxygen" class="py-32 px-6 bg-black relative overflow-hidden">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-orange-900/10 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Generator Oksigen Alami</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Reaksi kimia sederhana yang menyelamatkan sel tubuh Anda dari hipoksia (kekurangan oksigen).</p>
+            </div>
+
+            <!-- Chemical Reaction Visual -->
+            <div class="reveal glass-panel-strong p-8 rounded-3xl mb-12 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-brand-accent/5 animate-pulse-slow"></div>
+                
+                <div class="text-sm text-brand-accent font-mono uppercase tracking-widest mb-6">Persamaan Reaksi Squalene dalam Tubuh</div>
+                
+                <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-2xl md:text-4xl font-bold font-mono text-white">
+                    <div class="group relative">
+                        <span>C<sub class="text-sm">30</sub>H<sub class="text-sm">50</sub></span>
+                        <span class="text-xs font-sans font-normal text-gray-500 block mt-2 opacity-0 group-hover:opacity-100 transition-opacity absolute w-full text-center -bottom-6">Squalene</span>
+                    </div>
+                    <span class="text-gray-600">+</span>
+                    <div class="group relative">
+                        <span>6H<sub class="text-sm">2</sub>O</span>
+                        <span class="text-xs font-sans font-normal text-gray-500 block mt-2 opacity-0 group-hover:opacity-100 transition-opacity absolute w-full text-center -bottom-6">Cairan Tubuh</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-brand-accent animate-pulse"></i>
+                    <div class="opacity-50">C<sub class="text-sm">30</sub>H<sub class="text-sm">62</sub></div>
+                    <span class="text-gray-600">+</span>
+                    <div class="group relative">
+                        <span class="text-brand-accent drop-shadow-[0_0_10px_rgba(245,158,11,0.8)]">3O<sub class="text-sm">2</sub></span>
+                        <span class="text-xs font-sans font-bold text-brand-accent block mt-2 absolute w-full text-center -bottom-6">OKSIGEN</span>
+                    </div>
+                </div>
+                
+                <p class="mt-12 text-gray-400 max-w-2xl">
+                    Saat Squalene bertemu cairan tubuh, ia mengikat Hidrogen dan <strong>melepaskan 3 molekul Oksigen murni</strong> langsung ke dalam sel-sel Anda.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS GRID -->
+    <section id="benefits" class="py-24 px-6 bg-[#0c0a09]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-16">Triple Action Benefit</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Benefit 1: Heart -->
+                <div class="reveal p-8 rounded-3xl bg-stone-900 border border-stone-800 hover:border-brand-accent/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 flex items-center justify-center mb-6 text-red-500 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Jantung & Kolesterol</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Membantu mengikat lemak jahat (LDL) dan mencegah penumpukan plak di pembuluh darah, melancarkan sirkulasi darah ke jantung.
+                    </p>
+                </div>
+
+                <!-- Benefit 2: Skin -->
+                <div class="reveal p-8 rounded-3xl bg-stone-900 border border-stone-800 hover:border-brand-accent/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6 text-yellow-500 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Anti-Aging & Kulit</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Squalene adalah komponen alami sebum manusia. Mengonsumsinya melembabkan kulit dari dalam, menghaluskan kerutan, dan membuat kulit bercahaya.
+                    </p>
+                </div>
+
+                <!-- Benefit 3: Energy -->
+                <div class="reveal p-8 rounded-3xl bg-stone-900 border border-stone-800 hover:border-brand-accent/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Stamina & Vitalitas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Suplai oksigen ekstra ke otak dan otot. Mengatasi rasa letih, lesu, dan meningkatkan fokus kerja sehari-hari.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-32 px-6 bg-black relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-900/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Investasi Kesehatan</h2>
+                <p class="text-xl text-gray-400">Pilih paket terbaik untuk kebutuhan Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Consumer -->
+                <div class="reveal glass-panel p-10 rounded-3xl border border-white/5 flex flex-col items-center text-center hover:bg-white/5 transition-all">
+                    <h3 class="text-gray-400 font-medium uppercase tracking-widest text-sm mb-4">Harga Konsumen</h3>
+                    <div class="text-5xl font-bold text-white mb-2">250<span class="text-2xl text-gray-500">rb</span></div>
+                    <p class="text-gray-500 text-sm mb-8">Per Botol (Softgel)</p>
+                    <ul class="text-gray-300 space-y-4 mb-8 text-sm w-full">
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Squalene Murni 99%</span>
+                            <i class="fa-solid fa-check text-brand-accent"></i>
+                        </li>
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Import Quality</span>
+                            <i class="fa-solid fa-check text-brand-accent"></i>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition-all">
+                        Beli Eceran
+                    </button>
+                </div>
+
+                <!-- Member (Highlighted) -->
+                <div class="reveal relative p-10 rounded-3xl flex flex-col items-center text-center transform md:scale-105 shadow-2xl shadow-orange-900/40 bg-[#1c1917] border border-yellow-500/50">
+                    <div class="absolute -top-4 bg-gradient-to-r from-yellow-500 to-orange-600 text-black text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg shadow-orange-500/50">
+                        Best Value
+                    </div>
+                    <h3 class="text-brand-accent font-medium uppercase tracking-widest text-sm mb-4">Harga Member</h3>
+                    <div class="text-5xl font-bold text-white mb-2">210<span class="text-2xl text-gray-500">rb</span></div>
+                    <p class="text-gray-500 text-sm mb-8">Hemat 40rb / Botol</p>
+                    
+                    <div class="w-full bg-stone-800/50 rounded-xl p-4 mb-8 border border-white/5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-400 text-sm">Keuntungan Poin</span>
+                            <span class="text-brand-accent font-bold">80 PV</span>
+                        </div>
+                        <div class="w-full bg-stone-700 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-accent w-full h-full animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-4 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-600 text-black font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(245,158,11,0.4)]">
+                        Join Member & Hemat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <div class="flex items-center justify-center gap-2 mb-4">
+            <!-- Icon Logo -->
+            <div class="w-6 h-6 rounded bg-gradient-to-br from-yellow-400 to-orange-600 flex items-center justify-center text-black font-bold text-xs">M</div>
+            <span class="text-gray-500 font-bold">MUMTAS</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xl mx-auto px-6">
+            © 2024 Mumtas Product Knowledge. <br>
+            <span class="text-xs mt-2 block opacity-70">Disclaimer: Suplemen ini untuk menjaga kesehatan, bukan obat pengganti resep dokter.</span>
+        </p>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
