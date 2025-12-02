@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamatuk - The Ultimate Recovery Formula</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#022c22', // Very dark emerald
+                            card: '#064e3b', // Emerald 900
+                            accent: '#fbbf24', // Amber 400 (GOLD)
+                            secondary: '#34d399', // Emerald 400
+                            text: '#d1fae5'  // Emerald 100
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shine': 'shine 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shine: {
+                            '0%': { left: '-100%' },
+                            '50%': { left: '100%' },
+                            '100%': { left: '100%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(6, 78, 59, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(52, 211, 153, 0.1);
+        }
+
+        .glass-panel-gold {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fcd34d 0%, #d97706 80%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(52, 211, 153, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(52, 211, 153, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4 glass-panel border-b-0">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <div class="flex items-center gap-3">
+                <!-- Placeholder Logo Icon -->
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(52,211,153,0.5)]">M</div>
+                <span class="text-xl font-bold tracking-tight text-white">MUMTAS</span>
+            </div>
+
+            <div class="hidden md:flex gap-8 text-sm text-brand-text font-medium">
+                <a href="#dual-power" class="hover:text-brand-accent transition-colors">Komposisi</a>
+                <a href="#synergy" class="hover:text-brand-accent transition-colors">Cara Kerja</a>
+                <a href="#benefits" class="hover:text-brand-accent transition-colors">Manfaat</a>
+                <a href="#pricing" class="hover:text-brand-accent transition-colors">Harga</a>
+            </div>
+            <a href="#pricing" class="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm hover:brightness-110 transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                Pesan Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-950 via-black to-black z-0"></div>
+        <div class="absolute top-0 left-0 w-full h-full grid-bg opacity-30 z-0"></div>
+        
+        <!-- Glow Effects (Emerald & Gold) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-600/10 blur-[120px] rounded-full animate-pulse-slow"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto space-y-8 mt-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-4 animate-[fadeIn_1s_ease-out]">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Double Extraction Formula
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                <span class="text-gradient">Rapid Wound</span><br>
+                <span class="text-gradient-gold drop-shadow-2xl">Recovery.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Sinergi sempurna <span class="text-brand-accent font-bold">Golden Gamat</span> & <span class="text-brand-secondary font-bold">Ikan Kutuk</span>. <br class="hidden md:block">
+                Mempercepat penyembuhan luka operasi, diabetes, dan regenerasi sel tubuh.
+            </p>
+
+            <!-- 3D BOTTLE (GAMATUK VERSION) -->
+            <div class="pt-12 animate-float">
+                <div class="relative w-56 h-80 md:w-64 md:h-[400px] mx-auto perspective-1000">
+                    <!-- Bottle Body Container -->
+                    <div class="relative w-full h-full bg-gradient-to-br from-emerald-900 to-black rounded-[40px] border border-emerald-700/50 shadow-[0_0_60px_-15px_rgba(52,211,153,0.2)] flex flex-col items-center overflow-hidden backdrop-blur-sm group cursor-pointer transition-all duration-500 hover:shadow-[0_0_100px_-20px_rgba(52,211,153,0.4)]">
+                        
+                        <!-- Cap (Silver/Metallic Green) -->
+                        <div class="w-full h-16 bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-600/30 flex items-center justify-center">
+                             <div class="w-1/2 h-1 bg-emerald-500/30 rounded-full"></div>
+                        </div>
+
+                        <!-- Label Content -->
+                        <div class="flex-1 flex flex-col items-center justify-center p-6 text-center z-10 w-full relative">
+                            <!-- Border pattern on label -->
+                            <div class="absolute inset-4 border border-brand-accent/20 rounded-[24px]"></div>
+                            
+                            <!-- Icon: Shield + DNA -->
+                            <div class="relative mb-4">
+                                <i class="fa-solid fa-shield-virus text-brand-secondary text-5xl opacity-100 drop-shadow-[0_0_15px_rgba(16,185,129,0.8)]"></i>
+                            </div>
+                            
+                            <h3 class="text-3xl font-bold text-white leading-none mb-1">GAMATUK</h3>
+                            <p class="text-brand-accent font-medium tracking-widest text-[10px] uppercase mb-4">Gamat & Albumin Extract</p>
+                            
+                            <div class="w-full h-px bg-gradient-to-r from-transparent via-emerald-600 to-transparent my-4"></div>
+                            
+                            <div class="grid grid-cols-2 gap-x-4 text-xs font-mono w-full px-4">
+                                <div class="text-right text-brand-accent">250mg</div>
+                                <div class="text-left text-gray-500">Gamat</div>
+                                <div class="text-right text-brand-secondary">200mg</div>
+                                <div class="text-left text-gray-500">Kutuk</div>
+                            </div>
+                            
+                            <div class="mt-4 text-[10px] text-gray-400 border px-2 py-1 rounded border-gray-700">30 CAPSULES</div>
+                        </div>
+
+                        <!-- Reflection/Shine -->
+                        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-500/10 to-transparent pointer-events-none"></div>
+                        <div class="absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-[shine_1.5s_ease-in-out_infinite]" style="left: -100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DUAL POWER SECTION (Composition) -->
+    <section id="dual-power" class="py-32 px-6 bg-[#022c22] relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-white mb-4">450mg <span class="text-brand-accent">Kekuatan Ganda.</span></h2>
+                <p class="text-brand-text">Formulasi dosis tinggi untuk hasil terapi yang nyata.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Composition 1: Gamat -->
+                <div class="reveal glass-panel p-10 rounded-3xl relative overflow-hidden group hover:border-brand-accent/50 transition-all">
+                    <div class="absolute top-0 right-0 p-32 bg-yellow-500/10 blur-[60px] rounded-full group-hover:bg-yellow-500/20 transition-all"></div>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-brand-accent">Gamat Emas</h3>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-bold">250 mg</span>
+                    </div>
+                    <p class="text-sm text-gray-400 font-mono mb-6">Ext. Stichopus variegatus</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white block">80% Kolagen</strong>
+                                <span class="text-brand-text text-sm">Bahan baku utama pembentukan jaringan kulit baru dan penyembuhan luka.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Cell Growth Factor</strong>
+                                <span class="text-brand-text text-sm">Merangsang regenerasi sel yang rusak 3x lebih cepat.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Composition 2: Kutuk -->
+                <div class="reveal glass-panel p-10 rounded-3xl relative overflow-hidden group hover:border-brand-secondary/50 transition-all">
+                    <div class="absolute top-0 right-0 p-32 bg-emerald-500/10 blur-[60px] rounded-full group-hover:bg-emerald-500/20 transition-all"></div>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-brand-secondary">Ikan Kutuk</h3>
+                        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-bold">200 mg</span>
+                    </div>
+                    <p class="text-sm text-gray-400 font-mono mb-6">Ext. Channa striata</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Tinggi Albumin</strong>
+                                <span class="text-brand-text text-sm">Protein penting yang menjaga tekanan osmotik darah dan mengangkut obat/nutrisi ke sel.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Anti-Inflamasi</strong>
+                                <span class="text-brand-text text-sm">Mengurangi pembengkakan (udema) pasca operasi secara alami.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCIENCE SECTION: THE SYNERGY -->
+    <section id="synergy" class="py-32 px-6 bg-black relative overflow-hidden">
+        <!-- Decoration Line -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-emerald-900 to-transparent"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">The Healing Synergy</h2>
+                <p class="text-gray-400">Mengapa gabungan keduanya jauh lebih efektif daripada diminum terpisah?</p>
+            </div>
+
+            <!-- Visualization of Synergy -->
+            <div class="reveal bg-gradient-to-b from-[#064e3b] to-black p-1 rounded-3xl">
+                <div class="bg-black rounded-[20px] p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                        
+                        <!-- Step 1 -->
+                        <div class="flex-1">
+                            <div class="w-16 h-16 rounded-full bg-emerald-900/50 border border-emerald-500/30 flex items-center justify-center mx-auto md:mx-0 mb-4 text-brand-secondary text-2xl">
+                                <i class="fa-solid fa-truck-medical"></i>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">1. Albumin (Kutuk)</h4>
+                            <p class="text-sm text-gray-400">Bertindak sebagai <strong>"Kendaraan"</strong>. Ia membawa nutrisi dan obat beredar cepat dalam darah menuju jaringan yang luka.</p>
+                        </div>
+
+                        <!-- Plus Sign -->
+                        <div class="text-4xl text-gray-700 animate-pulse">+</div>
+
+                        <!-- Step 2 -->
+                        <div class="flex-1">
+                            <div class="w-16 h-16 rounded-full bg-yellow-900/50 border border-yellow-500/30 flex items-center justify-center mx-auto md:mx-0 mb-4 text-brand-accent text-2xl">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">2. Kolagen (Gamat)</h4>
+                            <p class="text-sm text-gray-400">Bertindak sebagai <strong>"Batu Bata"</strong>. Bahan material utama untuk menutup luka dan membentuk kulit baru.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                        <p class="text-lg text-white">
+                            Hasilnya: <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-yellow-400 font-bold">Penyembuhan 3X Lebih Cepat</span> dibandingkan hanya mengandalkan antibiotik saja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS GRID -->
+    <section id="benefits" class="py-24 px-6 bg-[#022c22]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-16">Siapa yang Membutuhkan?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Benefit 1 -->
+                <div class="reveal p-8 rounded-3xl bg-emerald-950 border border-emerald-900 hover:border-brand-secondary/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-brand-secondary text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pasca Operasi</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Sangat disarankan untuk pemulihan pasca operasi (Sesar, Usus Buntu, dll) untuk mencegah infeksi dan mempercepat penutupan luka jahitan.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="reveal p-8 rounded-3xl bg-emerald-950 border border-emerald-900 hover:border-brand-secondary/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-brand-secondary text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-crutch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Luka Diabetes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Membantu mengeringkan luka basah (gangren) pada penderita diabetes yang sulit sembuh karena kekurangan nutrisi sel.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="reveal p-8 rounded-3xl bg-emerald-950 border border-emerald-900 hover:border-brand-secondary/50 group transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-brand-secondary text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Maag & Luka Bakar</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Efektif melapisi dinding lambung yang luka (tukak lambung) dan meregenerasi sel kulit akibat luka bakar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-32 px-6 bg-black relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Investasi Kesehatan</h2>
+                <p class="text-xl text-gray-400">Pilih paket terbaik untuk pemulihan optimal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Consumer -->
+                <div class="reveal glass-panel p-10 rounded-3xl border border-white/5 flex flex-col items-center text-center hover:bg-white/5 transition-all">
+                    <h3 class="text-gray-400 font-medium uppercase tracking-widest text-sm mb-4">Harga Konsumen</h3>
+                    <div class="text-5xl font-bold text-white mb-2">185<span class="text-2xl text-gray-500">rb</span></div>
+                    <p class="text-gray-500 text-sm mb-8">Per Botol (30 Kapsul)</p>
+                    <ul class="text-gray-300 space-y-4 mb-8 text-sm w-full">
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Double Extract 450mg</span>
+                            <i class="fa-solid fa-check text-brand-secondary"></i>
+                        </li>
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Clinical Grade</span>
+                            <i class="fa-solid fa-check text-brand-secondary"></i>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition-all">
+                        Beli Eceran
+                    </button>
+                </div>
+
+                <!-- Member (Highlighted) -->
+                <div class="reveal relative p-10 rounded-3xl flex flex-col items-center text-center transform md:scale-105 shadow-2xl shadow-emerald-900/40 bg-[#064e3b] border border-emerald-500/50">
+                    <div class="absolute -top-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg shadow-emerald-500/50">
+                        Best Value
+                    </div>
+                    <h3 class="text-brand-secondary font-medium uppercase tracking-widest text-sm mb-4">Harga Member</h3>
+                    <div class="text-5xl font-bold text-white mb-2">150<span class="text-2xl text-gray-500">rb</span></div>
+                    <p class="text-gray-500 text-sm mb-8">Hemat 35rb / Botol</p>
+                    
+                    <div class="w-full bg-emerald-900/50 rounded-xl p-4 mb-8 border border-white/5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-400 text-sm">Keuntungan Poin</span>
+                            <span class="text-brand-secondary font-bold">50 PV</span>
+                        </div>
+                        <div class="w-full bg-emerald-800 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-secondary w-full h-full animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+                        Join Member & Hemat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <div class="flex items-center justify-center gap-2 mb-4">
+            <!-- Icon Logo -->
+            <div class="w-6 h-6 rounded bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-bold text-xs">M</div>
+            <span class="text-gray-500 font-bold">MUMTAS</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xl mx-auto px-6">
+            © 2024 Mumtas Product Knowledge. <br>
+            <span class="text-xs mt-2 block opacity-70">Disclaimer: Suplemen ini merupakan terapi pendukung percepatan penyembuhan, bukan pengganti prosedur medis utama.</span>
+        </p>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
